@@ -12,7 +12,7 @@ public static class MeshFilterExtensions
         return hashVertices.ToArray();
     }
     
-    public static Vector3[] GetHashVerticesWorld(this MeshFilter meshFilter){
+    public static Vector3[] GetHashVerticesWorldPosition(this MeshFilter meshFilter){
         var verticesLocal = meshFilter.GetHashVertices();
         var worldPosVertices = new List<Vector3>();
 
