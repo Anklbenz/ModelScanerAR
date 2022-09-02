@@ -316,14 +316,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 234604944}
-  m_LocalRotation: {x: 0, y: 0.99996346, z: -0, w: -0.008551951}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 1, z: 5.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 180.98, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &234604948
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18456,6 +18456,7 @@ GameObject:
   - component: {fileID: 8073576202980162584}
   - component: {fileID: 4439740460745318556}
   - component: {fileID: 4287105437877990405}
+  - component: {fileID: 8073576202980162585}
   m_Layer: 0
   m_Name: GEUPS_SGCE6080_DOOR_BDY01
   m_TagString: Untagged
@@ -57180,6 +57181,20 @@ Transform:
   m_Father: {fileID: 1529555139816291379}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!64 &8073576202980162585
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2600607805811333194}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -718654103876763439, guid: 063fb4088dbf96647a3fdd17c673f3be, type: 3}
 --- !u!1 &8074100530081861876
 GameObject:
   m_ObjectHideFlags: 0

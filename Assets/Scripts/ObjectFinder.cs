@@ -23,7 +23,7 @@ public class ObjectFinder : MonoBehaviour {
 
     void FixedUpdate(){
         if (Input.GetKeyDown(KeyCode.L)){
-            _instantiateData  = _dataFileIO.TryLoad();
+            _instantiateData = _dataFileIO.TryLoad();
             _points = _instantiateData.cloudOfPoint;
             Debug.Log($"Data loaded:  {_points.Length != 0}");
         }
@@ -33,21 +33,29 @@ public class ObjectFinder : MonoBehaviour {
             foreach (var point in _points){
                 var cameraTransform = _camera.transform;
                 var wordPoint = cameraTransform.TransformPoint(point);
-                var rayDirection = cameraTransform.position - wordPoint;
-                _rays.Add(new Ray(wordPoint, rayDirection));
+                var rayDirection = wordPoint - cameraTransform.position;
+                var ray = new Ray(wordPoint, rayDirection);
+
+                if (Mathf.PingPong(Time.time, 0.0001f) > 0)
+                    Debug.DrawRay(_camera.transform.position, rayDirection, Color.green);
+
+                if (Physics.Raycast(ray, out var raycastHit)){
+                    if (Math.Abs(raycastHit.distance - point.w) < 0.1f)
+                        Debug.DrawRay(_camera.transform.position, rayDirection*3, Color.red);
+                }
             }
+
         }
 
         if (Input.GetKeyDown(KeyCode.Space)){
-          
+
         }
     }
 
     private void OnDrawGizmos(){
         if(_rays == null ) return;
         
-        foreach (var ray in _rays){
-            Debug.DrawRay(_camera.transform.position, ray.direction, Color.green);
-        }
+    //    foreach (var ray in _rays){
+      //  }
     }
 }
